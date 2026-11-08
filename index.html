@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>ななえママ ファン属性</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<style>
+/* A4 縦の紙1枚。上から「ひとことと大きな数字 → SNSごとの表 → ファンの中身 → 番組に生かす／お願い」。紙として見せるので明るい色だけで固定 */
+:root{
+  color-scheme:light;
+  --desk:#E9E5E6;      /* 紙の外 */
+  --paper:#FFFFFF;
+  --ink:#241B1F;
+  --ink-2:#5A4E54;
+  --ink-3:#8A7D83;
+  --line:#E6DDE0;
+  --rose:#9E1F3C;      /* ママの薔薇の色 */
+  --rose-2:#C9566F;
+  --rose-bg:#FAF1F3;
+  --bar:#D9CDD2;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--desk);color:var(--ink);font-family:var(--sans);font-size:13px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3,p{margin:0}
+h1,h2{text-wrap:balance}
+
+.paper{width:794px;max-width:100%;min-height:1123px;margin:0 auto;background:var(--paper);
+  box-shadow:0 1px 2px rgba(60,30,40,.08),0 12px 40px rgba(60,30,40,.12);
+  padding:34px 44px 22px;display:flex;flex-direction:column;gap:14px}
+
+/* 表題 */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:10px;border-bottom:1px solid var(--ink)}
+.head .kicker{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--rose)}
+.head h1{font-size:26px;font-weight:900;letter-spacing:.03em;line-height:1.25;margin-top:4px}
+.head .meta{font-size:11px;color:var(--ink-2);text-align:right;line-height:1.7;white-space:nowrap}
+
+/* ひとことと大きな数字 */
+.lead{font-size:14.5px;font-weight:700;line-height:1.6}
+.lead em{font-style:normal;color:var(--rose)}
+.keys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.key{padding:8px 14px;display:grid;gap:2px;min-width:0}
+.key + .key{border-left:1px solid var(--line)}
+.key .k{font-size:11px;font-weight:700;color:var(--ink-2)}
+.key .v{font-size:28px;font-weight:900;color:var(--rose);line-height:1.15;letter-spacing:-.01em}
+.key .v small{font-size:14px;font-weight:700;margin-left:2px}
+.key .s{font-size:11px;color:var(--ink-3)}
+
+/* 見出し */
+.sec{display:grid;gap:6px;align-content:start;min-width:0}
+.sec h2{font-size:14px;font-weight:900;display:flex;align-items:baseline;gap:10px}
+.sec h2 .en{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--rose)}
+
+/* SNSの表 */
+table.sns{width:100%;border-collapse:collapse;font-size:12.5px}
+.sns th{font-size:10.5px;font-weight:700;color:var(--ink-3);text-align:left;padding:0 8px 6px;border-bottom:1px solid var(--ink)}
+.sns th.r,.sns td.r{text-align:right}
+.sns td{padding:4px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.sns td.name{font-weight:700;white-space:nowrap}
+.sns td.name span{display:inline;margin-left:6px;font-size:10px;font-weight:400;color:var(--ink-3)}
+.sns td.f{width:34%}
+.fbar{display:flex;align-items:center;gap:8px}
+.fbar .t{flex:1;height:10px;background:#F3EEF0;border-radius:2px;overflow:hidden}
+.fbar .t i{display:block;height:100%;background:var(--bar)}
+.fbar b{width:4.6em;text-align:right;font-weight:900}
+.sns td.reach{font-weight:900;white-space:nowrap}
+.sns td.reach span{font-weight:400;color:var(--ink-3);font-size:10.5px;margin-right:4px}
+.sns td.note{color:var(--ink-2);font-size:11.5px}
+.sns tr.best td.name,.sns tr.best td.reach{color:var(--rose)}
+.sns tr.best .fbar .t i{background:var(--rose-2)}
+.sns tr.tora td{background:var(--rose-bg)}
+.tablenote{font-size:10.5px;color:var(--ink-3)}
+
+/* ファンの中身：2列 */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.topics{display:grid;gap:4px}
+.topic{display:grid;grid-template-columns:9em minmax(0,1fr) 3em;white-space:nowrap;gap:8px;align-items:center;font-size:12px}
+.topic .t{height:10px;background:#F3EEF0;border-radius:2px;overflow:hidden}
+.topic .t i{display:block;height:100%;background:var(--bar)}
+.topic .p{text-align:right;font-weight:700}
+.topic.new .k,.topic.new .p{color:var(--rose);font-weight:900}
+.topic.new .t i{background:var(--rose-2)}
+.small{font-size:10.5px;color:var(--ink-3);line-height:1.6}
+
+.who{display:grid;gap:5px;padding:0;margin:0;list-style:none}
+.who li{display:grid;gap:1px;padding-left:12px;border-left:2px solid var(--line)}
+.who li b{font-size:12.5px;font-weight:900}
+.who li span{font-size:11px;color:var(--ink-2);line-height:1.5}
+.who li.q{border-left-color:var(--rose-2)}
+.who li.q b{color:var(--rose)}
+
+/* 番組に生かす／お願い */
+.use ol{margin:0;padding:0;list-style:none;display:grid;gap:5px;counter-reset:u}
+.use li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;font-size:11.5px;line-height:1.55;counter-increment:u}
+.use li::before{content:counter(u);display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;margin-top:1px}
+.use li b{font-weight:900}
+.ask{background:var(--rose-bg);border-radius:6px;padding:12px 14px;display:grid;gap:6px;align-content:start}
+.ask h2{color:var(--rose)}
+.ask p{font-size:11.5px;line-height:1.55}
+.ask ul{margin:0;padding:0;list-style:none;display:grid;gap:5px}
+.ask li{font-size:11px;background:#fff;border-radius:4px;padding:4px 10px}
+.ask li b{font-weight:900;margin-right:6px}
+
+.foot{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:9.5px;color:var(--ink-3);line-height:1.6}
+
+@media (max-width:820px){
+  body{padding-block:16px}
+  .paper{min-height:0;padding:28px 20px 24px;gap:18px}
+  .head{flex-direction:column;align-items:flex-start}
+  .head .meta{text-align:left;white-space:normal}
+  .keys{grid-template-columns:1fr}
+  .key + .key{border-left:0;border-top:1px solid var(--line)}
+  .two{grid-template-columns:1fr;gap:20px}
+  .tablewrap{overflow-x:auto}
+  table.sns{min-width:560px}
+}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff;padding:0}
+  .paper{box-shadow:none;width:210mm;min-height:297mm}
+}
+</style>
+</head>
+<body>
+
+
+<article class="paper">
+  <header class="head">
+    <div>
+      <div class="kicker">新番組に向けて</div>
+      <h1>ななえママのファンのすがた</h1>
+    </div>
+    <div class="meta">2026年11月8日<br>KumaCLI</div>
+  </header>
+
+  <p class="lead">5つのSNSで<em>のべ約47万人</em>。Instagram と「令和の虎」では、毎回<em>10万〜30万回</em>見られています。</p>
+
+  <div class="keys num">
+    <div class="key"><span class="k">5つのSNSのフォロワー合計</span><span class="v">47<small>万人</small></span><span class="s">5媒体の合計（重複を含む）</span></div>
+    <div class="key"><span class="k">Instagram リール 1本あたり</span><span class="v">11<small>万回</small></span><span class="s">フォロワーとほぼ同じ人数に届く</span></div>
+    <div class="key"><span class="k">令和の虎 ママの出演回 1本あたり</span><span class="v">27<small>万回</small></span><span class="s">2026年の8本・番組の登録者は153万人</span></div>
+  </div>
+
+  <section class="sec">
+    <h2><span class="en">CHANNELS</span>SNSごとの人数と届き方</h2>
+    <div class="tablewrap">
+      <table class="sns num">
+        <thead><tr><th>媒体</th><th>フォロワー</th><th class="r">1本・1投稿あたり</th><th>ひとこと</th></tr></thead>
+        <tbody>
+          <tr><td class="name">YouTube<span>わたし、銀座の女</span></td><td class="f"><div class="fbar"><span class="t"><i style="width:100%"></i></span><b>25.0万人</b></div></td><td class="r reach"><span>長尺</span>5.1万回</td><td class="note">人数がいちばん多い</td></tr>
+          <tr class="best"><td class="name">Instagram<span>@nanae.karasawa</span></td><td class="f"><div class="fbar"><span class="t"><i style="width:50.8%"></i></span><b>12.7万人</b></div></td><td class="r reach"><span>リール</span>11.2万回</td><td class="note">いちばん届いている</td></tr>
+          <tr><td class="name">TikTok<span>@ginzananae</span></td><td class="f"><div class="fbar"><span class="t"><i style="width:15%"></i></span><b>3.75万人</b></div></td><td class="r reach"><span>人気の3本</span>1〜2万回</td><td class="note">いいねは累計59.9万</td></tr>
+          <tr><td class="name">X<span>@karasawa_nanae</span></td><td class="f"><div class="fbar"><span class="t"><i style="width:14.4%"></i></span><b>3.6万人</b></div></td><td class="r reach"><span>表示</span>9,491回</td><td class="note">告知が広がる</td></tr>
+          <tr><td class="name">Threads<span>@nanae.karasawa</span></td><td class="f"><div class="fbar"><span class="t"><i style="width:8%"></i></span><b>2.0万人</b></div></td><td class="r reach"><span>最近の閲覧</span>172万回</td><td class="note">文章で届く</td></tr>
+          <tr class="tora"><td class="name">令和の虎<span>出演中の番組</span></td><td class="f"><div class="fbar"><span class="t"><i style="width:0"></i></span><b>153万人</b></div></td><td class="r reach"><span>ママの出演回</span>27万回</td><td class="note">新しい人の入口</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tablenote">「1本・1投稿あたり」は、多い順に並べた真ん中の回の数字。YouTube は2026年の長尺、Instagram は直近24本、X は直近199投稿。令和の虎の153万人は番組チャンネルの登録者。</p>
+  </section>
+
+  <div class="two">
+    <section class="sec">
+      <h2><span class="en">VOICE</span>コメントに書かれていること</h2>
+      <div class="topics num">
+        <div class="topic"><span class="k">応援・好き</span><span class="t"><i style="width:82%"></i></span><span class="p">12.3%</span></div>
+        <div class="topic"><span class="k">経営・仕事の話</span><span class="t"><i style="width:69.3%"></i></span><span class="p">10.4%</span></div>
+        <div class="topic"><span class="k">夜のお仕事・接客</span><span class="t"><i style="width:64%"></i></span><span class="p">9.6%</span></div>
+        <div class="topic"><span class="k">心配・ご意見</span><span class="t"><i style="width:30%"></i></span><span class="p">4.5%</span></div>
+        <div class="topic new"><span class="k">美容・エイジング</span><span class="t"><i style="width:10.7%"></i></span><span class="p">1.6%</span></div>
+      </div>
+      <p class="small">YouTube 長尺8本のコメント732件を話題ごとに数えたもの。美容は、いまのファンにとって新しいテーマ。</p>
+    </section>
+
+    <section class="sec">
+      <h2><span class="en">FANS</span>どんな人が見ているか</h2>
+      <ul class="who">
+        <li><b>働く大人</b><span>上司と部下、経営の判断について「自分ならこうする」と書くコメントが多い。</span></li>
+        <li><b>経営者・起業家</b><span>X のフォロワーの約1割が起業・副業・投資の人。令和の虎は「30〜50代の男性が9割以上」で始まった番組（創設者談・2019年頃）。</span></li>
+        <li><b>女性からの相談も届く</b><span>2020年に、女性の悩みに答える「女性のお悩み編」を2本公開。</span></li>
+        <li class="q"><b>男女の比率・年代はまだ分からない</b><span>公開の数字・記事・分析サイトのどこにも出ていない。ママの管理画面だけにある。</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="two">
+    <section class="sec use">
+      <h2><span class="en">FOR THE SHOW</span>番組づくりに生かせること</h2>
+      <ol>
+        <li><span><b>ママの本音を軸にする。</b>ファンが見に来ている理由そのもの。美容の回も、ママの体験と本音で話す。</span></li>
+        <li><span><b>切り抜きは Instagram のリールへ。</b>毎回約10万回届くので、番組の入口になる。</span></li>
+        <li><span><b>最初の数回に「ママ自身の美容の悩み」の回を。</b>新しいテーマに、いまのファンがついてきやすい。</span></li>
+      </ol>
+    </section>
+
+    <section class="ask">
+      <h2>ママにお願いしたいこと</h2>
+      <p>男女の比率と年代を、番組の想定（30〜40代の女性）と照らし合わせたいです。次の画面の写真をいただけますか。直近28日分で十分です。</p>
+      <ul>
+        <li><b>YouTube</b>Studio → アナリティクス → 視聴者</li>
+        <li><b>Instagram</b>プロフェッショナルダッシュボード → フォロワー</li>
+        <li><b>TikTok</b>アナリティクス → フォロワー</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer class="foot">
+    数字はすべて2026年11月8日時点。YouTube・X は公式API、Instagram・TikTok・Threads は各アカウントの公開表示から集計。コメントは YouTube 長尺8本の732件（2025年1月〜2026年11月の回）。令和の虎の視聴者層は bizSPA!「令和に蘇った『マネーの虎』」（2020年5月4日）の岩井良明さんの発言。投稿が止まっているサブチャンネル（銀座ななえチャンネル2nd・4.1万人）は合計に入れていない。
+  </footer>
+</article>
+
+</body>
+</html>
