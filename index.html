@@ -109,6 +109,23 @@ table.sns{width:100%;border-collapse:collapse;font-size:12.5px}
 
 .foot{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);font-size:9.5px;color:var(--ink-3);line-height:1.6}
 
+
+/* 男女の帯 */
+.gbars{display:grid;gap:5px}
+.gbar{display:grid;grid-template-columns:12.5em minmax(0,1fr);gap:8px;align-items:center;font-size:11px}
+.gbar .lab{line-height:1.3}
+.gbar .lab small{display:block;font-size:9.5px;color:var(--ink-3)}
+.gbar .st{display:flex;height:16px;border-radius:2px;overflow:hidden;font-size:10px;font-weight:700;color:#fff}
+.gbar .st .f{background:var(--rose-2);display:flex;align-items:center;padding-left:6px;white-space:nowrap}
+.gbar .st .m{background:#8D98A8;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;white-space:nowrap}
+.gbar.ref .lab{color:var(--ink-3)}
+.gbar.ref .st{opacity:.55}
+.legend{display:flex;gap:12px;font-size:10px;color:var(--ink-3)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.how{background:#F6F4F5;border-radius:6px;padding:12px 14px;display:grid;gap:6px;align-content:start}
+.how h2{font-size:13px}
+.how ul{margin:0;padding-left:1.1em;display:grid;gap:3px;font-size:10.5px;color:var(--ink-2);line-height:1.5}
+
 @media (max-width:820px){
   body{padding-block:16px}
   .paper{min-height:0;padding:28px 20px 24px;gap:18px}
@@ -143,7 +160,7 @@ table.sns{width:100%;border-collapse:collapse;font-size:12.5px}
 
   <div class="keys num">
     <div class="key"><span class="k">5つのSNSのフォロワー合計</span><span class="v">47<small>万人</small></span><span class="s">5媒体の合計（重複を含む）</span></div>
-    <div class="key"><span class="k">Instagram リール 1本あたり</span><span class="v">11<small>万回</small></span><span class="s">フォロワーとほぼ同じ人数に届いています</span></div>
+    <div class="key"><span class="k">Instagram リール 1本あたり</span><span class="v">11<small>万回</small></span><span class="s">フォロワー数とほぼ同じです</span></div>
     <div class="key"><span class="k">令和の虎 ご出演回 1本あたり</span><span class="v">27<small>万回</small></span><span class="s">2026年の8本・番組の登録者は153万人</span></div>
   </div>
 
@@ -167,24 +184,25 @@ table.sns{width:100%;border-collapse:collapse;font-size:12.5px}
 
   <div class="two">
     <section class="sec">
-      <h2><span class="en">VOICE</span>コメントに書かれていること</h2>
-      <div class="topics num">
-        <div class="topic"><span class="k">応援・好き</span><span class="t"><i style="width:82%"></i></span><span class="p">12.3%</span></div>
-        <div class="topic"><span class="k">経営・仕事の話</span><span class="t"><i style="width:69.3%"></i></span><span class="p">10.4%</span></div>
-        <div class="topic"><span class="k">夜のお仕事・接客</span><span class="t"><i style="width:64%"></i></span><span class="p">9.6%</span></div>
-        <div class="topic"><span class="k">心配・ご意見</span><span class="t"><i style="width:30%"></i></span><span class="p">4.5%</span></div>
-        <div class="topic new"><span class="k">美容・エイジング</span><span class="t"><i style="width:10.7%"></i></span><span class="p">1.6%</span></div>
+      <h2><span class="en">GENDER</span>男女の比率（推定）</h2>
+      <div class="legend"><span><i style="background:var(--rose-2)"></i>女性</span><span><i style="background:#8D98A8"></i>男性</span></div>
+      <div class="gbars num">
+        <div class="gbar"><span class="lab">YouTube<small>コメントした1,465人をAIで推定</small></span><span class="st"><span class="f" style="width:62%">62%</span><span class="m" style="width:38%">38%</span></span></div>
+        <div class="gbar"><span class="lab">Instagram<small>分析ツール2社の推定</small></span><span class="st"><span class="f" style="width:62%">62%</span><span class="m" style="width:38%">38%</span></span></div>
+        <div class="gbar"><span class="lab">TikTok<small>分析ツール2社の推定</small></span><span class="st"><span class="f" style="width:71%">70〜72%</span><span class="m" style="width:29%">28〜30%</span></span></div>
+        <div class="gbar"><span class="lab">X<small>フォロワー285人をAIで推定</small></span><span class="st"><span class="f" style="width:44%">44%</span><span class="m" style="width:56%">56%</span></span></div>
+        <div class="gbar ref"><span class="lab">参考：2020年のお話<small>唐沢様「4分の3が女性」</small></span><span class="st"><span class="f" style="width:75%">75%</span><span class="m" style="width:25%">25%</span></span></div>
       </div>
-      <p class="small">YouTube 長尺8本のコメント732件を話題ごとに数えました。美容は、いまのファンの方にとって新しいテーマです。</p>
+      <p class="small">YouTube の推定方法を、KumaCLI のチャンネル（実数は女性64.9%）で試すと、推定は65.7%で誤差1ポイント以内でした。</p>
     </section>
 
     <section class="sec">
-      <h2><span class="en">FANS</span>どんな方が見ているか</h2>
+      <h2><span class="en">FANS</span>年代と、ほかに見ているもの（推定）</h2>
       <ul class="who">
-        <li><b>働く大人</b><span>上司と部下、経営の判断について「自分ならこうする」と書くコメントが多くあります。</span></li>
-        <li><b>経営者・起業家</b><span>X のフォロワーの約1割が起業・副業・投資の方です。令和の虎は「30〜50代の男性が9割以上」で始まった番組です（創設者談・2019年頃）。</span></li>
-        <li><b>女性からのご相談も届いています</b><span>2020年に、女性のお悩みに答える「女性のお悩み編」を2本公開されています。</span></li>
-        <li class="q"><b>男女の比率・年代は、まだ分かっていません</b><span>公開の数字・記事・分析サイトには出ておらず、管理画面でのみご確認いただけます。</span></li>
+        <li><b>中心は30〜40代、幅は20代後半〜50代</b><span>Instagram は25〜34歳が47%・35〜44歳が21%（分析ツール）。X のフォロワーは30代・40代が31%ずつです。</span></li>
+        <li><b>似た番組も同じ傾向です</b><span>和田さんの「LAST CALL」は視聴者の約75%が女性、25〜34歳が40.6%（2026年5月の発表）。</span></li>
+        <li><b>人の人生と夜の世界のチャンネルを見ています</b><span>YouTube でコメントした方が登録しているのは、進撃のノア26%・街録ch 26%・ROLAND 22%・令和の虎19%。</span></li>
+        <li class="q"><b>美容医療への関心が高い</b><span>同じ方々の36%が、美容整形・美容医療のチャンネル（高須幹弥 11%・ドクターA 8%など）を登録しています。</span></li>
       </ul>
     </section>
   </div>
@@ -193,25 +211,25 @@ table.sns{width:100%;border-collapse:collapse;font-size:12.5px}
     <section class="sec use">
       <h2><span class="en">FOR THE SHOW</span>番組づくりに生かせること</h2>
       <ol>
-        <li><span><b>唐沢様の本音を軸にします。</b>ファンの方が見に来ている理由そのものです。美容の回も、ご自身の体験と本音でお話しいただきます。</span></li>
-        <li><span><b>切り抜きは Instagram のリールに。</b>毎回約10万回届くので、番組の入口になります。</span></li>
-        <li><span><b>最初の数回に、ご自身の美容のお悩みの回を。</b>新しいテーマにも、いまのファンの方がついてきやすくなります。</span></li>
+        <li><span><b>番組の想定（30〜40代の女性）は、推定とおおむね合っています。</b>美容医療のチャンネルを見ている方も多く、テーマとの相性も良好です。</span></li>
+        <li><span><b>唐沢様の本音を軸にします。</b>ファンの方が見に来ている理由そのものです。美容の回も、ご自身の体験でお話しいただきます。</span></li>
+        <li><span><b>切り抜きは Instagram のリールに。</b>毎回約10万回届き、女性の割合も高い場所です。</span></li>
       </ol>
     </section>
 
-    <section class="ask">
-      <h2>お願い</h2>
-      <p>男女の比率と年代を、番組の想定（30〜40代の女性）と照らし合わせたく存じます。お手数ですが、次の画面の写真をいただけますでしょうか。直近28日分で十分です。</p>
+    <section class="how">
+      <h2>推定のしかた</h2>
       <ul>
-        <li><b>YouTube</b>Studio → アナリティクス → 視聴者</li>
-        <li><b>Instagram</b>プロフェッショナルダッシュボード → フォロワー</li>
-        <li><b>TikTok</b>アナリティクス → フォロワー</li>
+        <li>YouTube のコメント5,821人、X のフォロワー600人、Instagram・TikTok のコメント640人を、お名前と文面から AI で推定（判定できた方だけで集計）</li>
+        <li>YouTube の登録を公開している516人の登録チャンネルを集計</li>
+        <li>分析ツール（Modash・Influencer Hero）と、似た番組の公表値</li>
+        <li>管理画面の実数ではないため、数ポイントの幅をもって見てください</li>
       </ul>
     </section>
   </div>
 
   <footer class="foot">
-    数字はすべて2026年11月8日時点です。YouTube・X は公式API、Instagram・TikTok・Threads は各アカウントの公開表示から集計。コメントは YouTube 長尺8本の732件（2025年1月〜2026年11月の回）。令和の虎の視聴者層は bizSPA!「令和に蘇った『マネーの虎』」（2020年5月4日）の岩井良明さんの発言。更新をお休みされているサブチャンネル（銀座ななえチャンネル2nd・4.1万人）は合計に含めていません。
+    数字はすべて2026年11月8日時点です。YouTube・X は公式API、Instagram・TikTok・Threads は各アカウントの公開表示から集計。2020年のお話はメゾンドボーテ（2020年6月29日時点のインタビュー）、LAST CALL は株式会社LASTCALL の発表（PR TIMES・2026年5月29日）。更新をお休みされているサブチャンネル（銀座ななえチャンネル2nd・4.1万人）は合計に含めていません。
   </footer>
 </article>
 
